@@ -6,7 +6,7 @@
       <!-- Uses newTask ID to send its value to add() as a local reference -->
       <input type="text" placeholder="Todo" #newTask>
       <!-- (click) = onClick() -->
-      <button (click)="add(newTask.value)" class="add-button">+</button>
+      <button onclick="add(newTask.value)" (click)="add(newTask.value)" class="add-button">+</button>
     </div>
     <table>
       <!-- *ngFor creates a for loop in Angular to create components for each task in the tasks array. -->
@@ -18,8 +18,8 @@
           </pre>
         </td>
         <td>
-          <button class="remove-button">X</button>
-          <button class="done-button">Done</button>
+          <button onclick="remove(task)" (click)="remove(task)" class="remove-button">X</button>
+          <button onclick="markAsDone(task)" (click)="markAsDone(task)" class="done-button">Done</button>
         </td>
       </tr>
     </table>
