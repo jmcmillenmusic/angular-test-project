@@ -1,63 +1,25 @@
 <div class="container">
   <div class="todo-list">
+    <!-- Double curly braces binds the data from app.component.ts -->
+    {{title}} 
     <div class="input-group">
-      <input type="text" placeholder="Todo">
-      <button class="add-button">+</button>
+      <!-- Uses newTask ID to send its value to add() as a local reference -->
+      <input type="text" placeholder="Todo" #newTask>
+      <!-- (click) = onClick() -->
+      <button onclick="add(newTask.value)" (click)="add(newTask.value)" class="add-button">+</button>
     </div>
     <table>
-      <tr class="even">
+      <!-- *ngFor creates a for loop in Angular to create components for each task in the tasks array. -->
+      <tr *ngFor="let task of tasks" class="even">
         <td>
           <pre>
-            Visit Ann
+            <!-- Double curly braces binds the data from app.component.ts -->
+            {{task}}
           </pre>
         </td>
         <td>
-          <button class="remove-button">X</button>
-          <button class="done-button">Done</button>
-        </td>
-      </tr>
-      <tr class="odd">
-        <td>
-          <pre>
-            Call Dad
-          </pre>
-        </td>
-        <td>
-          <button class="remove-button">X</button>
-          <button class="done-button">Done</button>
-        </td>
-      </tr>
-      <tr class="even">
-        <td>
-          <pre>
-            Go to Gym
-          </pre>
-        </td>
-        <td>
-          <button class="remove-button">X</button>
-          <button class="done-button">Done</button>
-        </td>
-      </tr>
-      <tr class="odd">
-        <td>
-          <pre>
-            Wash the dishes
-          </pre>
-        </td>
-        <td>
-          <button class="remove-button">X</button>
-          <button class="done-button">Done</button>
-        </td>
-      </tr>
-      <tr class="even">
-        <td>
-          <pre>
-            Shop for the party
-          </pre>
-        </td>
-        <td>
-          <button class="remove-button">X</button>
-          <button class="done-button">Done</button>
+          <button onclick="remove(task)" (click)="remove(task)" class="remove-button">X</button>
+          <button onclick="markAsDone(task)" (click)="markAsDone(task)" class="done-button">Done</button>
         </td>
       </tr>
     </table>
