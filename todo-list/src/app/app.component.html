@@ -3,8 +3,10 @@
     <!-- Double curly braces binds the data from app.component.ts -->
     {{title}} 
     <div class="input-group">
-      <input type="text" placeholder="Todo">
-      <button class="add-button">+</button>
+      <!-- Uses newTask ID to send its value to add() as a local reference -->
+      <input type="text" placeholder="Todo" #newTask>
+      <!-- (click) = onClick() -->
+      <button (click)="add(newTask.value)" class="add-button">+</button>
     </div>
     <table>
       <!-- *ngFor creates a for loop in Angular to create components for each task in the tasks array. -->

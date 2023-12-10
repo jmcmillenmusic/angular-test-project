@@ -18,4 +18,7 @@ export class AppComponent {
     'Wash the dishes', 
     'Shop for the party'
   ];
+  add(newTask: string) {
+    this.tasks.push(newTask);
+  }
 }
