@@ -11,4 +11,11 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'todo-list';
+  tasks = [
+    'Visit Ann', 
+    'Call Dad', 
+    'Go the the gym', 
+    'Wash the dishes', 
+    'Shop for the party'
+  ];
 }
