@@ -10,3 +10,19 @@ header {
     font-weight: bold;
     padding: 5rem 4rem
 }
+
+.is-done {
+    text-decoration: line-through;
+}
+
+tr {
+    height: 50px;
+    text-align: left;
+    flex-wrap: nowrap;
+    display: flex;
+    justify-content: space-between;
+}
+
+td {
+    margin-left: 1rem;
+}
