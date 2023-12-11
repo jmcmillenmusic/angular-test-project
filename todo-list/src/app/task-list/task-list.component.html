@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="todo-list">
+      
+      <div class="input-group">
+        <!-- Uses newTask ID to send its value to add() as a local reference -->
+        <input type="text" placeholder="Todo" #newTask>
+        <!-- (click) = onClick() -->
+        <button onclick="add(newTask.value)" class="add-button">+</button>
+      </div>
+      <table>
+        <!-- *ngFor creates a for loop in Angular to create components for each task in the tasks array. -->
+        <tr *ngFor="let task of tasks; let i = index" [class.even]="i%2==0" [class.odd]="i%2==1">
+          <td>
+            <p [class.is-done] = "task.isDone">
+              <!-- Double curly braces binds the data from app.component.ts -->
+              {{task.title}}
+            </p>
+          </td>
+          <td>
+            <button onclick="remove(task)" class="remove-button">X</button>
+            <button onclick="task.toggleIsDone()" class="done-button">
+              <!-- Toggles the word Done to Undo when a task is done -->
+              {{task.isDone? "Undo" : "Done"}}
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+<!-- <p>task-list works!</p> -->
